@@ -72,7 +72,8 @@ builder.Services.AddAuthorization();
 builder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowReactApp",
-        policy => policy.WithOrigins("http://localhost:3000") // React default port
+        policy => policy.WithOrigins("http://localhost:3000", 
+                "https://career-emsi.vercel.app") // React default port
             .AllowAnyHeader()
             .AllowAnyMethod()
             .AllowCredentials());
